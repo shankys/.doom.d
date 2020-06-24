@@ -14,3 +14,20 @@ $ ~/.emacs.d/bin/doom install # Install Doom Emacs
 # Add ~/.emacs.d/bin to PATH
 
 #+END_SRC
+
+* Doom Packages
+
+These are the packages Doom supplies by default that will be used
+
+** Completion
++company, +ivy
+** Editor
++evil, +multiple-cursors, +snippets
+** Lang
++cc, +emacs-lisp, +go, +java, +js, +json, +kotlin, +latex, +markdown, +org, +python, +ruby, +sh, +swift, +web, +yaml
+** Term
++vterm
+** Tools
++lsp, +magit
+** UI
++doom
