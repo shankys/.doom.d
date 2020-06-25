@@ -8,6 +8,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 $ brew install git ripgrep coreutils fd # Install core Homebrew dependencies
 $ brew install shellcheck # Needed for lang/+sh
 $ yarn global add marked # Needed for lang/+markdown
+$ yarn global add typescript-language-server # Needed for lang/+javascript +lsp
 $ brew tap d12frosted/emacs-plus # Add Homebrew repository for emacs-plus package
 $ brew install emacs-plus@27 ----with-modern-icon-black-variant # Install Emacs 27
 $ ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app # Link Emacs to /Applications
