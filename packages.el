@@ -48,3 +48,15 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;;
+;; CUSTOM CODE
+;;
+
+;; How to use command-log-mode:
+;;
+;; (1) M-x command-log-mode
+;; (2) M-x global-command-log-mode
+;; (3) M-x clm/open-command-log-buffer
+(package! command-log-mode
+  :recipe (:host github :repo "lewang/command-log-mode"))
