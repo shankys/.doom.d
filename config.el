@@ -62,6 +62,9 @@
 ;; Set default Neotree window width to 26
 (after! treemacs (setq treemacs-width 26))
 
+;; Makes Treemacs icons better and colorful
+(after! treemacs (setq doom-themes-treemacs-theme "doom-colors"))
+
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
 (when (display-graphic-p)
