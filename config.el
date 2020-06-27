@@ -59,11 +59,8 @@
 ;; CUSTOM CODE
 ;;
 
-;; Make Neotree window resizable
-(after! neotree (setq neo-window-fixed-size nil))
-
-;; Set default Neotree window width to 24
-(after! neotree (setq neo-window-width 24))
+;; Set default Neotree window width to 26
+(after! treemacs (setq treemacs-width 26))
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
