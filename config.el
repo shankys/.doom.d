@@ -65,6 +65,12 @@
 ;; Makes Treemacs icons better and colorful
 (after! treemacs (setq doom-themes-treemacs-theme "doom-colors"))
 
+;; Start autocomplete after single character is typed
+(setq company-minimum-prefix-length 1)
+
+;; Make autocomplete start with no delay
+(setq company-idle-delay 0)
+
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
 (when (display-graphic-p)
