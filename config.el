@@ -115,8 +115,13 @@
   :config
   ;; Start autocomplete after single character is typed
   (setq company-minimum-prefix-length 1)
-  ;; Make autocomplete start with no delay
+  ;; Make autocomplete start with 0.1 second delay
   (setq company-idle-delay 0.1))
+
+(use-package! tide
+  :hook (js2-mode . setup-tide-mode)
+  :config
+  (setq company-tooltip-align-annotations t))
 
 ;; Special work to do ONLY when there is a window system being used
 ;; Saves frame position and size on exit
@@ -126,8 +131,9 @@
       (add-hook 'after-init-hook 'load-framegeometry)
       (add-hook 'kill-emacs-hook 'save-framegeometry)))
 
+
 ;; Set up Tide when entering js2-mode (JavaScript major mode)
-(add-hook 'js2-mode-hook #'setup-tide-mode)
+;; (add-hook 'js2-mode-hook #'setup-tide-mode)
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
