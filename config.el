@@ -122,7 +122,12 @@
   ;; Set up Tide when entering js2-mode (JavaScript major mode)
   :hook (js2-mode . setup-tide-mode)
   :config
-  (setq company-tooltip-align-annotations t))
+  (setq company-tooltip-align-annotations t)
+  (map! :localleader
+        :map tide-mode-map
+        "R" #'tide-restart-server
+        "s" #'tide-rename-symbol
+        "o" #'tide-organize-imports))
 
 ;;
 ;; GLOBAL CODE
