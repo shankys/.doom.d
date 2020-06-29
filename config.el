@@ -101,7 +101,7 @@
   (company-mode +1))
 
 ;;
-;; CUSTOM CODE
+;; PACKAGE SPECIFIC CODE
 ;;
 
 (use-package! treemacs
@@ -119,21 +119,22 @@
   (setq company-idle-delay 0.1))
 
 (use-package! tide
+  ;; Set up Tide when entering js2-mode (JavaScript major mode)
   :hook (js2-mode . setup-tide-mode)
   :config
   (setq company-tooltip-align-annotations t))
 
+;;
+;; GLOBAL CODE
+;;
+
 ;; Special work to do ONLY when there is a window system being used
+;; Opens frame to same position and same size on startup as was previously saved
 ;; Saves frame position and size on exit
-;; Reopens frame to same position and size on startup
 (if window-system
     (progn
       (add-hook 'after-init-hook 'load-framegeometry)
       (add-hook 'kill-emacs-hook 'save-framegeometry)))
-
-
-;; Set up Tide when entering js2-mode (JavaScript major mode)
-;; (add-hook 'js2-mode-hook #'setup-tide-mode)
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
