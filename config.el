@@ -37,7 +37,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -56,20 +55,8 @@
 ;; they are implemented.
 
 ;;
-;; CUSTOM CODE
+;; CUSTOM FUNCTIONS
 ;;
-
-;; Set default Neotree window width to 26
-(after! treemacs (setq treemacs-width 26))
-
-;; Makes Treemacs icons better and colorful
-(after! treemacs (setq doom-themes-treemacs-theme "doom-colors"))
-
-;; Start autocomplete after single character is typed
-(setq company-minimum-prefix-length 1)
-
-;; Make autocomplete start with no delay
-(setq company-idle-delay 0)
 
 (defun save-framegeometry ()
   "Gets the current frame's geometry and saves to ~/.emacs.d/framegeometry."
@@ -104,6 +91,31 @@
     (when (file-readable-p framegeometry-file)
       (load-file framegeometry-file))))
 
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+;;
+;; CUSTOM CODE
+;;
+
+;; Set default Neotree window width to 26
+(after! treemacs (setq treemacs-width 26))
+
+;; Makes Treemacs icons better and colorful
+(after! treemacs (setq doom-themes-treemacs-theme "doom-colors"))
+
+;; Start autocomplete after single character is typed
+(setq company-minimum-prefix-length 1)
+
+;; Make autocomplete start with no delay
+(setq company-idle-delay 0)
+
 ;; Special work to do ONLY when there is a window system being used
 ;; Saves frame position and size on exit
 ;; Reopens frame to same position and size on startup
@@ -111,6 +123,8 @@
     (progn
       (add-hook 'after-init-hook 'load-framegeometry)
       (add-hook 'kill-emacs-hook 'save-framegeometry)))
+
+(add-hook 'js2-mode-hook #'setup-tide-mode)
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
