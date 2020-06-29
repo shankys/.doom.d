@@ -119,16 +119,43 @@
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
     (company-mode +1))
-  ;; Set up Tide when entering js2-mode (JavaScript major mode)
   :hook (js2-mode . setup-tide-mode)
   :config
   (setq company-tooltip-align-annotations t)
-  (map! :localleader
-        :map tide-mode-map
-        "R" #'tide-restart-server
-        "s" #'tide-rename-symbol
-        "f" #'tide-rename-file
-        "o" #'tide-organize-imports))
+  (map! :leader
+        (:prefix ("m" . "tide")
+         ;; Server
+         "s" #'tide-restart-server
+         ;; Organize imports
+         "o" #'tide-organize-imports
+         ;; Code refactor
+         "r" #'tide-refactor
+         ;; Code fixes
+         "x" #'tide-fix
+         ;; Documentation
+         "d" #'tide-jsdoc-template
+         ;; Rename
+         (:prefix ("n" . "rename")
+          "s" #'tide-rename-symbol
+          "f" #'tide-rename-file)
+         ;; Jump to definition
+         (:prefix ("j" . "jump")
+          "d" #'tide-jump-to-definition
+          "i" #'tide-jump-to-implementation
+          "b" #'tide-jump-back)
+         ;; Find occurrences
+         (:prefix ("f" . "find")
+          "r" #'tide-references
+          "g" #'tide-goto-reference
+          "j" #'tide-cycle-next-reference
+          "k" #'tide-cycle-previous-reference)
+        ;; Errors
+         (:prefix ("e" . "errors")
+          "j" #'tide-find-next-error
+          "k" #'tide-find-previous-error
+          "g" #'tide-goto-error
+          "t" #'tide-error-at-point
+          "p" #'tide-project-errors))))
 
 ;;
 ;; GLOBAL CODE
