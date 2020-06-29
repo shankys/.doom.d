@@ -111,11 +111,12 @@
   ;; Make icons better and colorful
   (setq doom-themes-treemacs-theme "doom-colors"))
 
-;; Start autocomplete after single character is typed
-(setq company-minimum-prefix-length 1)
-
-;; Make autocomplete start with no delay
-(setq company-idle-delay 0)
+(use-package! company
+  :config
+  ;; Start autocomplete after single character is typed
+  (setq company-minimum-prefix-length 1)
+  ;; Make autocomplete start with no delay
+  (setq company-idle-delay 0.1))
 
 ;; Special work to do ONLY when there is a window system being used
 ;; Saves frame position and size on exit
@@ -127,8 +128,6 @@
 
 ;; Set up Tide when entering js2-mode (JavaScript major mode)
 (add-hook 'js2-mode-hook #'setup-tide-mode)
-
-;; Organize imports on save
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
