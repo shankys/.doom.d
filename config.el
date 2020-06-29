@@ -91,15 +91,6 @@
     (when (file-readable-p framegeometry-file)
       (load-file framegeometry-file))))
 
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
-
 ;;
 ;; PACKAGE SPECIFIC CODE
 ;;
@@ -119,6 +110,15 @@
   (setq company-idle-delay 0.1))
 
 (use-package! tide
+  :preface
+  (defun setup-tide-mode ()
+    (interactive)
+    (tide-setup)
+    (flycheck-mode +1)
+    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1)
+    (company-mode +1))
   ;; Set up Tide when entering js2-mode (JavaScript major mode)
   :hook (js2-mode . setup-tide-mode)
   :config
