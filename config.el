@@ -127,6 +127,7 @@
         :map tide-mode-map
         "R" #'tide-restart-server
         "s" #'tide-rename-symbol
+        "f" #'tide-rename-file
         "o" #'tide-organize-imports))
 
 ;;
