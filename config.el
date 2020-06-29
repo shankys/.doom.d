@@ -104,11 +104,12 @@
 ;; CUSTOM CODE
 ;;
 
-;; Set default Neotree window width to 26
-(after! treemacs (setq treemacs-width 26))
-
-;; Makes Treemacs icons better and colorful
-(after! treemacs (setq doom-themes-treemacs-theme "doom-colors"))
+(use-package! treemacs
+  :config
+  ;; Set default window width to 26
+  (setq treemacs-width 26)
+  ;; Make icons better and colorful
+  (setq doom-themes-treemacs-theme "doom-colors"))
 
 ;; Start autocomplete after single character is typed
 (setq company-minimum-prefix-length 1)
@@ -124,7 +125,10 @@
       (add-hook 'after-init-hook 'load-framegeometry)
       (add-hook 'kill-emacs-hook 'save-framegeometry)))
 
+;; Set up Tide when entering js2-mode (JavaScript major mode)
 (add-hook 'js2-mode-hook #'setup-tide-mode)
+
+;; Organize imports on save
 
 ;; Mouse & Smooth Scroll
 ;; Scroll one line at a time (less "jumpy" than defaults)
