@@ -124,8 +124,6 @@
   (setq company-tooltip-align-annotations t)
   (map! :leader
         (:prefix ("m" . "tide")
-         ;; Server
-         "s" #'tide-restart-server
          ;; Organize imports
          "o" #'tide-organize-imports
          ;; Code refactor
@@ -134,6 +132,10 @@
          "x" #'tide-fix
          ;; Documentation
          "d" #'tide-jsdoc-template
+         ;; Server
+         (:prefix ("s" . "server")
+          "l" #'tide-list-servers
+          "r" #'tide-restart-server)
          ;; Rename
          (:prefix ("n" . "rename")
           "s" #'tide-rename-symbol
