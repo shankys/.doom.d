@@ -113,6 +113,7 @@
   :preface
   (defun setup-tide-mode ()
     (interactive)
+    (setq tide-tsserver-executable "/usr/local/bin/tsserver")
     (tide-setup)
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
