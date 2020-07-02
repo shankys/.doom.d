@@ -133,7 +133,9 @@
          ;; Code fixes
          "x" #'tide-fix
          ;; Documentation
-         "d" #'tide-jsdoc-template
+         (:prefix ("d" . "documentation")
+          "p" #'tide-documentation-at-point
+          "t" #'tide-jsdoc-template)
          ;; Server
          (:prefix ("s" . "server")
           "l" #'tide-list-servers
