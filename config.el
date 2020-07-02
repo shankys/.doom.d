@@ -139,7 +139,8 @@
          ;; Server
          (:prefix ("s" . "server")
           "l" #'tide-list-servers
-          "r" #'tide-restart-server)
+          "r" #'tide-restart-server
+          "v" #'tide-verify-setup)
          ;; Rename
          (:prefix ("n" . "rename")
           "s" #'tide-rename-symbol
