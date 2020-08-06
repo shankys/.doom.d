@@ -14,7 +14,7 @@ $ npm install -g stylelint # Needed for lang/+web css linting
 $ npm install -g js-beautify # Needed for lang/+web js/css/html mode formatting
 $ npm install -g typescript-language-server # Needed for lang/+javascript +lsp
 $ brew tap d12frosted/emacs-plus # Add Homebrew repository for emacs-plus package
-$ brew install emacs-plus@27 --with-jansson --with-modern-icon-black-variant # Install Emacs 27
+$ brew install emacs-plus@27 --with-jansson --with-modern-black-variant-icon # Install Emacs 27
 $ ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app # Link Emacs to /Applications
 $ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # Get Doom Emacs
 $ ~/.emacs.d/bin/doom install # Install Doom Emacs
