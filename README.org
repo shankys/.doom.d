@@ -9,10 +9,10 @@ $ brew install git ripgrep findutils fd # Install core Homebrew dependencies
 # Add /usr/local/bin to PATH
 # Add /usr/local/opt/findutils/libexec/gnubin to PATH
 $ brew install shellcheck # Needed for lang/+sh
-$ yarn global add marked # Needed for lang/+markdown
-$ yarn global add stylelint # Needed for lang/+web css linting
-$ yarn global add js-beautify # Needed for lang/+web js/css/html mode formatting
-$ yarn global add typescript-language-server # Needed for lang/+javascript +lsp
+$ npm install -g marked # Needed for lang/+markdown
+$ npm install -g stylelint # Needed for lang/+web css linting
+$ npm install -g js-beautify # Needed for lang/+web js/css/html mode formatting
+$ npm install -g typescript-language-server # Needed for lang/+javascript +lsp
 $ brew tap d12frosted/emacs-plus # Add Homebrew repository for emacs-plus package
 $ brew install emacs-plus@27 --with-jansson --with-modern-icon-black-variant # Install Emacs 27
 $ ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app # Link Emacs to /Applications
