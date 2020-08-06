@@ -9,6 +9,7 @@ $ brew install git ripgrep findutils fd # Install core Homebrew dependencies
 # Add /usr/local/bin to PATH
 # Add /usr/local/opt/findutils/libexec/gnubin to PATH
 $ brew install shellcheck # Needed for lang/+sh
+$ brew install jq # Needed for lang/+json (counsel-jq)
 $ npm install -g marked # Needed for lang/+markdown
 $ npm install -g stylelint # Needed for lang/+web css linting
 $ npm install -g js-beautify # Needed for lang/+web js/css/html mode formatting
