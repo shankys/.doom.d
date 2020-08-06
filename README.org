@@ -14,7 +14,7 @@ $ brew install jq # Needed for lang/+json (counsel-jq)
 $ npm install -g marked # Needed for lang/+markdown
 $ npm install -g stylelint # Needed for lang/+web css linting
 $ npm install -g js-beautify # Needed for lang/+web js/css/html mode formatting
-$ npm install -g typescript-language-server # Needed for lang/+javascript +lsp
+$ npm install -g typescript # Needed for Emacs tide package
 $ brew tap d12frosted/emacs-plus # Add Homebrew repository for emacs-plus package
 $ brew install emacs-plus@27 --with-jansson --with-modern-black-variant-icon # Install Emacs 27
 $ ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app # Link Emacs to /Applications
